@@ -45,21 +45,19 @@ checkBatsmanInForm <- function(file, name="A Hitter",alpha=0.05) {
     
     if(pValue > alpha){
         
-        str4 <- paste("The batsman ",name, "is In-Form as the p value:", pValue," is greater than alpha= ", alpha)
+        str4 <- paste(name,"'s Form Status: In-Form because the p value:", pValue," is greater than alpha= ", alpha)
     } else {
         #print(str2)
-        str4 <-paste("The batsman", name, "is Out-of-Form as the p value:", pValue," is less than alpha= ", alpha)
+        str4 <-paste(name, "'s Form Status: Out-of-Form because the p value:", pValue," is less than alpha= ", alpha)
     }
-    
-    str0 <- paste("Population size:",poplen," Mean of population:",mu)
-    str1 <- paste("Sample size:",n," Mean of sample:",xbar, "SD of sample:", s)
-    str2 <- paste("Null hypothesis H0 :",name,"'s sample average is within 95% confidence interval of population average")
-    str3 <- paste("Alternative hypothesis Ha :",name,"'s sample average is below the 95% confidence interval of population average")
-    
-    print(str0)
-    print(str1)
-    print(str2)
-    print(str3)
+    cat("*******************************************************************************************\n\n")
+    cat("Population size:",poplen," Mean of population:",mu,"\n")
+    cat("Sample size:",n," Mean of sample:",xbar, "SD of sample:", s,"\n\n")
+    cat("Null hypothesis H0 :",name,"'s sample average is within 95% confidence interval 
+        of population average\n")
+    cat("Alternative hypothesis Ha :",name,"'s sample average is below the 95% confidence
+        interval of population average\n\n")
     print(str4)
+    cat("*******************************************************************************************\n\n")
     
 }
